@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../data/db-config.js');
+const db = require('../data/dbConfig.js');
 const router = express.Router();
 
 router.post('/', (req, res) => {
