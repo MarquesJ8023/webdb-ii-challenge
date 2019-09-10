@@ -1,12 +1,12 @@
 const express = require('express');
 
-const carsRouter = require('../cars/carsRouter.js');
+const carsRoute = require('../cars/carsRouter.js');
 
 const server = express();
 
 server.use(express.json());
 
-server.use('/api/cars', carsRouter);
+server.use('/api/cars', carsRoute);
 
 server.get('/', (req, res) => {
     res.send(`<h2>Trustworthy Used Cars!</h2>`)
