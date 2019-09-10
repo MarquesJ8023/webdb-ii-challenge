@@ -3,8 +3,7 @@ const db = require('../data/dbConfig.js');
 const router = express.Router();
 
 router.post('/', (req, res) => {
-    const newCar = req.body;
-   carsRoute.insert(newCar)
+   db.insert(cars)
     .then((cars) => {
         console.log('New car')
         res.status(201).json(cars)
@@ -16,7 +15,7 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const id = req.params.id;
-    carsRoute.remove(id)
+    db.remove(id)
         .then((IDdeleted) => {
             if(IDdeleted > 0) {
                 res.status(200).json({message: "Car deleted"})
