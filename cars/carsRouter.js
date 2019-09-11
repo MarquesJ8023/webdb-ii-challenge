@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
     const newCar = req.body;
-   db.insert(cars)
+   db('cars').insert(cars)
     .then((cars) => {
         console.log('New car')
         res.status(201).json(cars)
@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const id = req.params.id;
-    db.remove(id)
+    db('id').remove(id)
         .then((IDdeleted) => {
             if(IDdeleted > 0) {
                 res.status(200).json({message: "Car deleted"})
