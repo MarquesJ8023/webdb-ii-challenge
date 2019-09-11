@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const id = req.params.id;
-    db('id').remove(id)
+    db('cars').remove(id)
         .then((IDdeleted) => {
             if(IDdeleted > 0) {
                 res.status(200).json({message: "Car deleted"})
