@@ -3,6 +3,7 @@ const db = require('../data/dbConfig.js');
 const router = express.Router();
 
 router.post('/', (req, res) => {
+    const newCar = req.body;
    db.insert(cars)
     .then((cars) => {
         console.log('New car')
